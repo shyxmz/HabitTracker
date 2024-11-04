@@ -5,23 +5,16 @@
     "description": "Tracks time spent on websites and categorizes them as productive or non-productive.",
     "permissions": ["tabs", "storage", "notifications", "activeTab"],
     "background": {
-      "service_worker": "background/background.js"
+        "service_worker": "background/background.js"
     },
     "action": {
-      "default_popup": "popup/popup.html",
-      "default_icon": {
-        "128": "assets/logo.png"
-      }
+        "default_popup": "popup/popup.html"
     },
-    "options_page": "options/options.html",
-    "icons": {
-      "128": "assets/logo.png"
-    },
+    "options_page": "options/options.html", 
     "content_scripts": [
-      {
-        "matches": ["<all_urls>"],
-        "js": ["content/content.js"]
-      }
+        {
+            "matches": ["<all_urls>"],
+            "js": ["content/content.js"]
+        }
     ]
-  }
-  
+}

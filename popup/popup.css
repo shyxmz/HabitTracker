@@ -1,0 +1,185 @@
+/* Reset some default styles */
+body {
+    margin: 0;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: linear-gradient(135deg, #1a1c23 0%, #23262d 100%);
+    color: #e4e6eb;
+    padding: 15px;
+    width: 300px;
+    min-height: 400px;
+}
+
+/* Container for the entire popup */
+.popup-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Header styling */
+header {
+    text-align: center;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 12px;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+h1 {
+    font-size: 24px;
+    background: linear-gradient(135deg, #6e8efb, #7873f5);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin: 0;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* Summary section styling */
+#summary {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: 100%;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+#summary h2 {
+    font-size: 18px;
+    margin: 0 0 15px 0;
+    color: #7873f5;
+    font-weight: 600;
+}
+
+#summary p {
+    font-size: 14px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #b4b7bd;
+}
+
+#summary p span {
+    font-weight: 600;
+    color: #e4e6eb;
+}
+
+/* Progress section styling */
+#progress {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 14px;
+    color: #b4b7bd;
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* Style for the progress bar */
+progress {
+    width: 100%;
+    height: 12px;
+    appearance: none;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+/* Custom styles for the progress bar */
+progress::-webkit-progress-bar {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+}
+
+progress::-webkit-progress-value {
+    background: linear-gradient(90deg, #6e8efb, #7873f5);
+    border-radius: 6px;
+    transition: width 0.3s ease;
+}
+
+/* Control buttons styling */
+#controls {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 12px;
+}
+
+button {
+    flex: 1;
+    background: linear-gradient(135deg, #6e8efb, #7873f5);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 16px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(126, 115, 245, 0.3);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Notifications section styling */
+#notifications {
+    margin-top: 15px;
+    font-size: 13px;
+    background: linear-gradient(135deg, rgba(231, 76, 60, 0.1), rgba(231, 76, 60, 0.05));
+    padding: 10px 15px;
+    border-radius: 8px;
+    width: 100%;
+    text-align: center;
+    border: 1px solid rgba(231, 76, 60, 0.2);
+}
+
+#notification-message {
+    color: #e74c3c;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* Hover effects for interactive elements */
+#summary:hover {
+    transform: translateY(-2px);
+    transition: transform 0.3s ease;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.popup-container {
+    animation: fadeIn 0.3s ease-out;
+}
