@@ -5,16 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MindfulSurf</title>
     <link rel="stylesheet" href="popup.css">
+    <!-- Add Material Icons for settings icon -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
     <div class="popup-container">
-        <!-- Header with Logo and Title -->
+        <!-- Header with Logo, Settings Icon, and Title -->
         <header>
-            <img src="assests/logo.png" alt="Habit Tracker Logo" class="logo">
+            <div class="settings-icon">
+                <span class="material-icons" id="open-settings">settings</span>
+            </div>
+            <img src="assets/logo.png" alt="Habit Tracker Logo" class="logo">
             <h1>Habit Tracker</h1>
         </header>
 
-        <!-- Summary Section (e.g., today's usage stats) -->
+        <!-- Summary Section -->
         <section id="summary">
             <h2>Today's Summary</h2>
             <p id="productive-time">Productive Time: <span>0h 0m</span></p>
@@ -30,7 +35,7 @@
         <!-- Control Buttons -->
         <section id="controls">
             <button id="view-dashboard">View Dashboard</button>
-            <button id="open-settings">Settings</button>
+            <button id="reset">Reset Tracking</button>
         </section>
 
         <!-- Notifications Section -->

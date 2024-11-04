@@ -27,6 +27,26 @@ header {
     text-align: center;
     margin-bottom: 25px;
     position: relative;
+    width: 100%;
+}
+
+/* Settings icon styling */
+.settings-icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    cursor: pointer;
+}
+
+.settings-icon .material-icons {
+    color: #6e8efb;
+    font-size: 24px;
+    transition: all 0.3s ease;
+}
+
+.settings-icon .material-icons:hover {
+    color: #7873f5;
+    transform: rotate(90deg);
 }
 
 .logo {
@@ -148,6 +168,15 @@ button:hover {
 
 button:active {
     transform: translateY(0);
+}
+
+/* Reset button styling */
+#reset {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+}
+
+#reset:hover {
+    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
 }
 
 /* Notifications section styling */
