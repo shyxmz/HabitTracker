@@ -1,33 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Options - MindfulSurf</title>
-    <link rel="stylesheet" href="options.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Options - MindfulSurf</title>
+  <link rel="stylesheet" href="options.css">
 </head>
 <body>
-    <div class="options-container">
-        <h1>Settings</h1>
-        <form id="options-form">
-            <label for="time-goal">Time Goal (minutes):</label>
-            <input type="number" id="time-goal" min="1">
+  <div class="popup-container">
+    <header>
+      <div class="settings-icon">
+        <i class="material-icons">MindfulSurf</i>
+      </div>
+      <img src="/api/placeholder/60/60" alt="Logo" class="logo">
+      <h1>Settings</h1>
+    </header>
 
-            <label>
-                <input type="checkbox" id="notifications-enabled">
-                Enable Notifications
-            </label>
+    <form id="options-form">
+      <div id="summary">
+        <h2>Time Goal</h2>
+        <p>
+          <span id="time-goal-value">60</span> minutes
+        </p>
+      </div>
 
-            <h2>Productive Sites</h2>
-            <ul id="productive-sites-list"></ul>
+      <div id="progress">
+        <label for="time-goal-slider">Time Goal</label>
+        <input type="range" id="time-goal-slider" min="1" max="120" value="60" />
+      </div>
 
-            <h2>Non-Productive Sites</h2>
-            <ul id="non-productive-sites-list"></ul>
+      <div class="form-group">
+        <label>
+          <input type="checkbox" id="notifications-enabled">
+          Enable Notifications
+        </label>
+      </div>
 
-            <button type="submit">Save Options</button>
-        </form>
-        <p id="notification-message" style="display:none;"></p>
+      <div>
+        <h2>Productive Sites</h2>
+        <ul id="productive-sites-list">
+          <li>
+            <span>example.com</span>
+            <button type="button" class="remove-button">Remove</button>
+          </li>
+          <li>
+            <span>productivity-tool.com</span>
+            <button type="button" class="remove-button">Remove</button>
+          </li>
+        </ul>
+        <div class="form-group">
+          <input type="text" id="new-productive-site" placeholder="Add new productive site" />
+          <button type="button" class="add-button">Add</button>
+        </div>
+      </div>
+
+      <div>
+        <h2>Non-Productive Sites</h2>
+        <ul id="non-productive-sites-list">
+          <li>
+            <span>social-media.com</span>
+            <button type="button" class="remove-button">Remove</button>
+          </li>
+          <li>
+            <span>entertainment-site.com</span>
+            <button type="button" class="remove-button">Remove</button>
+          </li>
+        </ul>
+        <div class="form-group">
+          <input type="text" id="new-non-productive-site" placeholder="Add new non-productive site" />
+          <button type="button" class="add-button">Add</button>
+        </div>
+      </div>
+
+      <div id="controls">
+        <button type="submit">Save Options</button>
+        <button type="button" id="reset">Reset</button>
+      </div>
+    </form>
+
+    <div id="notifications" style="display:none;">
+      <p id="notification-message"></p>
     </div>
-    <script src="options.js"></script>
+  </div>
+
+  <script src="options.js"></script>
 </body>
 </html>

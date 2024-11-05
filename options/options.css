@@ -1,0 +1,361 @@
+/* Reset some default styles */
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: linear-gradient(135deg, #1a1c23 0%, #23262d 100%);
+    color: #e4e6eb;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Changed from center to allow scrolling */
+    padding: 40px 20px; /* Add padding to ensure content doesn't touch edges */
+}
+
+/* Container for the entire page */
+.popup-container {
+    width: 90%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    margin: 20px auto;
+    max-height: 90vh; /* Limit height to enable scrolling */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+/* Scrollbar styling */
+.popup-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.popup-container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+}
+
+.popup-container::-webkit-scrollbar-thumb {
+    background: rgba(110, 142, 251, 0.5);
+    border-radius: 4px;
+}
+
+.popup-container::-webkit-scrollbar-thumb:hover {
+    background: rgba(110, 142, 251, 0.7);
+}
+
+/* Form styling */
+#options-form {
+    width: 100%;
+}
+
+/* Header styling */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+    width: 100%;
+    padding-top: 10px;
+}
+
+/* Settings icon styling */
+.settings-icon {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    cursor: pointer;
+}
+
+.settings-icon .material-icons {
+    color: #6e8efb;
+    font-size: 24px;
+    transition: all 0.3s ease;
+}
+
+.settings-icon .material-icons:hover {
+    color: #7873f5;
+    transform: rotate(90deg);
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 16px;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+h1, h2 {
+    font-size: 28px;
+    background: linear-gradient(135deg, #6e8efb, #7873f5);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin: 0;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+h2 {
+    font-size: 20px;
+    margin: 24px 0 16px 0;
+}
+
+/* Form groups styling */
+.form-group {
+    margin-bottom: 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.form-group input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    color: #e4e6eb;
+}
+
+.form-group input[type="checkbox"] {
+    margin-right: 8px;
+    width: 16px;
+    height: 16px;
+}
+
+/* List styling */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 16px 0;
+    width: 100%;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+li span {
+    color: #e4e6eb;
+    word-break: break-all;
+    margin-right: 12px;
+}
+
+/* Button styling */
+.add-button, .remove-button {
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.add-button {
+    background: linear-gradient(135deg, #6e8efb, #7873f5);
+    color: white;
+    min-width: 80px;
+}
+
+.remove-button {
+    background: rgba(231, 76, 60, 0.2);
+    color: #e74c3c;
+    font-size: 14px;
+    min-width: 70px;
+}
+
+.remove-button:hover {
+    background: rgba(231, 76, 60, 0.3);
+}
+
+/* Range input styling */
+input[type="range"] {
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 3px;
+    outline: none;
+    -webkit-appearance: none;
+    margin: 10px 0;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #7873f5;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+}
+
+/* Summary section styling */
+#summary {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    margin-bottom: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-sizing: border-box;
+}
+
+#summary p {
+    font-size: 16px;
+    margin: 12px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #b4b7bd;
+}
+
+#summary p span {
+    font-weight: 600;
+    color: #e4e6eb;
+}
+
+/* Progress section styling */
+#progress {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+label {
+    font-size: 16px;
+    color: #b4b7bd;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* Control buttons styling */
+#controls {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 16px;
+    margin-top: 30px;
+}
+
+button {
+    flex: 1;
+    background: linear-gradient(135deg, #6e8efb, #7873f5);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 14px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(126, 115, 245, 0.3);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+#reset {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+}
+
+#reset:hover {
+    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+}
+
+/* Notifications section styling */
+#notifications {
+    margin-top: 20px;
+    font-size: 14px;
+    background: linear-gradient(135deg, rgba(231, 76, 60, 0.1), rgba(231, 76, 60, 0.05));
+    padding: 12px 18px;
+    border-radius: 8px;
+    width: 100%;
+    text-align: center;
+    border: 1px solid rgba(231, 76, 60, 0.2);
+    box-sizing: border-box;
+}
+
+#notification-message {
+    color: #e74c3c;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.popup-container {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    body {
+        padding: 20px 10px;
+    }
+
+    .popup-container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    .form-group {
+        flex-direction: column;
+    }
+
+    .form-group input[type="text"] {
+        width: 100%;
+        margin-bottom: 8px;
+    }
+
+    #controls {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+    }
+}
