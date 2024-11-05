@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded',loadPopupData);
 
 // Function to convert the time hours and minutes //
-function formatTime(hours,minutes){
+function formatTime(minutes){
     const hours = Math.floor(minutes/60);
     const mins = minutes%60;
     return `$(hours)h $(mins)m`;
