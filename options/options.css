@@ -12,7 +12,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: flex-start; /* Changed from center to allow scrolling */
-    padding: 40px 20px; /* Add padding to ensure content doesn't touch edges */
+    padding: 40px 20px;
 }
 
 /* Container for the entire page */
@@ -29,18 +29,13 @@ body {
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.05);
     margin: 20px auto;
-    max-height: 90vh; /* Limit height to enable scrolling */
-    overflow-y: auto; /* Enable vertical scrolling */
+    max-height: 90vh;
+    overflow-y: auto;
 }
 
 /* Scrollbar styling */
 .popup-container::-webkit-scrollbar {
     width: 8px;
-}
-
-.popup-container::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 4px;
 }
 
 .popup-container::-webkit-scrollbar-thumb {
@@ -66,7 +61,6 @@ header {
     padding-top: 10px;
 }
 
-/* Settings icon styling */
 .settings-icon {
     position: absolute;
     left: 0;
@@ -313,7 +307,6 @@ button:active {
     font-weight: 500;
 }
 
-/* Animations */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
